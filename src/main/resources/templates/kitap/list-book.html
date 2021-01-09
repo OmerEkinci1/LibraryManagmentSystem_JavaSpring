@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head th:replace="layouts :: header"></head>
+	
+	<body>
+	
+	<nav th:replace="layouts :: navbar"></nav>
+	
+	<!--  Add New Book Button -->
+			<a th:href="@{/kitap/new}"
+				class="btn btn-primary btn-sm mb-3"> 
+				Add Book 
+			</a> 
+			<br></br>
+	
+			<table class="table table-bordered table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th>Book Name: </th>
+						<th>Book Subtitle: </th>
+						<th>Book Serial Title: </th>
+						<th>Author Id: </th>
+						<th>Publishing House Id: </th>
+						<th>ISBN No: </th>
+						<th>Description: </th>
+					</tr>
+				</thead>		
+				<tbody>
+					<tr th:each="aBooks : ${books}">
+						<td th:text="${aBooks.kitapAdi}"/>
+						<td th:text="${aBooks.kitapAltAdi}"/>
+						<td th:text="${aBooks.kitapSeriAdi}"/>
+						<td th:text="${aBooks.yazarId}"/>
+						<td th:text="${aBooks.yayýneviId}"/>
+						<td th:text="${aBooks.isbnNo}"/>
+						<td th:text="${aBooks.aciklama}"/>
+					</tr>
+				</tbody>
+			
+			</table>		
+	</body>
+	</html>

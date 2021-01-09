@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head th:replace="layouts :: header"></head>
+	
+	<body>
+	
+	<nav th:replace="layouts :: navbar"></nav>
+	
+	<!--  Add New Publishing House Button -->
+			<a th:href="@{/yayýnevi/new}"
+				class="btn btn-primary btn-sm mb-3"> 
+				Add Publishing House 
+			</a> 
+			<br></br>
+	
+			<table class="table table-bordered table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th>Publishing House Name: </th>
+						<th>Description: </th>
+					</tr>
+				</thead>		
+				<tbody>
+					<tr th:each="aYayýnevi : ${yayýnevi}">
+						<td th:text="${aYayýnevi.yayineviAdi}"/>
+						<td th:text="${aYayýnevi.aciklama}"/>
+					</tr>
+				</tbody>
+			
+			</table>	
+	
+	</body>
+	</html>

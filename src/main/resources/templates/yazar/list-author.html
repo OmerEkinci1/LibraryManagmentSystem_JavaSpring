@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head th:replace="layouts :: header"></head>
+	
+	<body>
+	
+	<nav th:replace="layouts :: navbar"></nav>
+	
+	<!--  Add New Author Button -->
+			<a th:href="@{/yazar/new}"
+				class="btn btn-primary btn-sm mb-3"> 
+				Add Author 
+			</a> 
+			<br></br>
+	
+			<table class="table table-bordered table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th>Author Name: </th>
+						<th>Description: </th>
+					</tr>
+				</thead>		
+				<tbody>
+					<tr th:each="aYazar : ${yazar}">
+						<td th:text="${aYazar.yazarAdi}"/>
+						<td th:text="${aYazar.aciklama}"/>
+					</tr>
+				</tbody>	
+			</table>	
+	
+	</body>
+	</html>

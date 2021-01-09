@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+ 
+<html xmlns:th="http://www.thymeleaf.org">
+ 
+<head th:fragment="header">
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <link rel="stylesheet" th:href="@{/css/formatting.css}">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+ 
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=l6SIq-pPt13cG2rJQTptXiJZKJ1Z1GvKQuJVcDzYMDtwrI82ycPcDFQFntj2zcx1HEolcu5BqRrqsj-fjRE_bti4vGCFoV_fCrwePUFpRnEOyV-OCl7W5IYChdMWlA8f_LVsFQmNchkoFi3Omi0VsVDJfGhOhn84sc9l9OflhjXYBdFQ_N2_I8O-iR5t0qC6zSG8tJ9wYf0-qZl6H0r0EbgR6ZxTrQ25xnLPV-ZvZyXzCuE1iEhL0dIjdP2t45Pk" charset="UTF-8"></script></head>
+</head>
+<body>
+
+<nav th:fragment = "navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Özgür Yazılım AŞ</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" th:href="@{/}">Anasayfa</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/kitap/list}">Kitaplar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/yayınevi/list}">Yayınevi</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/yazar/list}">Yazarlar</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+</body>
+</html>
