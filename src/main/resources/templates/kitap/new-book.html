@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 	
-	<head th:replace="layouts :: header"></head>
+	<head th:replace="layout :: header"></head>
 	
 	<body>
 	
-	<nav th:replace="layouts :: navbar"></nav>
-	
+	<nav th:replace="layout :: navbar"></nav>
+	<br><br><br>
 	<div class="container">
 		<form action="/kitap/save" th:object="${kitap}" method="POST">
 		  <div class="mb-3">
@@ -17,7 +17,7 @@
 		    <input type="text" class="form-control" id="bookSubtitle" placeholder="Book Subtitle" th:field="${kitap.kitapAltAdi}">
 		  </div>
 		  <div class="mb-3">
-		    <input type="text" class="form-control" id="bookSerialName" placeholder="Book Serial Name" th:field="${kitap.SeriAdi}">
+		    <input type="text" class="form-control" id="bookSerialName" placeholder="Book Serial Name" th:field="${kitap.kitapSeriAdi}">
 		  </div>
 		  <div class="mb-3">
 		    <input type="text" class="form-control" id="bookAuthorId" placeholder="Book Author Id" th:field="${kitap.yazarId}">

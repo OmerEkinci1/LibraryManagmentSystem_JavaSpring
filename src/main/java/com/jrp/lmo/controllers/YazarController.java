@@ -21,7 +21,7 @@ public class YazarController {
 	
 	@GetMapping("/list")
 	public String displayAuthor(Model model) {
-		List<Yazar> yazar = (List<Yazar>) yazarRepo.findAll();
+		List<Yazar> yazar = yazarRepo.findAll();
 		model.addAttribute("yayınevi", yazar);
 		
 		return "/yazar/list-author";
@@ -41,7 +41,7 @@ public class YazarController {
 		// save to database using employee crud repos.
 		yazarRepo.save(yazar);
 		
-		return "redirect:/yazar/new";
+		return "redirect:/yazar/list";
 	}
 
 }

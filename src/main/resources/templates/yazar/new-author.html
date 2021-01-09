@@ -6,19 +6,19 @@
 	<body>
 	
 	<nav th:replace="layouts :: navbar"></nav>
-	
-<div class="container">
-		<form action="/yazar/save" th:object="${yazar}" method="POST">
-		  <div class="mb-3">
-		   <!--   <label for="exampleInputEmail1" class="form-label">Book Name:</label> -->
-		    <input type="text" class="form-control" id="yazarAdi" placeholder="Author Name:" th:field="${yazar.yazarAdi}">
-		   </div>
-		  <div class="mb-3">
-		    <input type="text" class="form-control" id="yazarAciklama" placeholder="Author Description: " th:field="${yazar.aciklama}">
-		  </div>
-		  <button type="submit" class="btn btn-primary">Ekle</button>
-		</form>
-</div>
+	<br><br><br>
+	<div class="container">
+			<form action="/yazar/save" th:object="${yazar}" method="POST">
+			  <div class="mb-3">
+			   <!--   <label for="exampleInputEmail1" class="form-label">Book Name:</label> -->
+			    <input type="text" class="form-control" id="yazarAdi" placeholder="Author Name:" th:field="${yazar.yazarAdi}">
+			   </div>
+			  <div class="mb-3">
+			    <input type="text" class="form-control" id="yazarAciklama" placeholder="Author Description: " th:field="${yazar.aciklama}">
+			  </div>
+			  <button type="submit" class="btn btn-primary">Ekle</button>
+			</form>
+	</div>
 	
 	</body>
 	</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head th:replace="layout :: header"></head>
+	
+	<body>
+	
+	<nav th:replace="layout :: navbar"></nav>
+	<br>
+	
+	<div class="container text-center">
+		<div>
+			<form th:action="@{/logout}" method="POST">
+				<p>
+					Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+				</p>
+				<input type="submit" class="btn btn-primary btn-sm mb-3" value="Sign Out">
+			</form>
+		</div>
+		<div>
+			<h1>List of All Users</h1>
+		</div>
+		
+		<div>
+			<!--  Add New Publishing House Button -->
+			<a th:href="@{/register}"
+				class="btn btn-primary btn-sm mb-3"> 
+				Add User
+			</a> 
+		</div>
+			<br></br>
+		<div>
+			<table class="table table-bordered table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th>First Name : </th>
+						<th>Last Name: </th>
+						<th>Email: </th>
+					</tr>
+				</thead>		
+				<tbody>
+					<tr th:each="user : ${listUsers}">
+						<td th:text="${user.first_name}">First Name</td>
+						<td th:text="${user.last_name}">Last Name</td>
+						<td th:text="${user.email}">Email</td>
+					</tr>
+				</tbody>
+			
+			</table>	
+		</div>
+	</div>
+	</body>
+	</html>

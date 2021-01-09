@@ -21,17 +21,17 @@ public class KitapController {
 	
 	@GetMapping("/list")
 	public String displayBooks(Model model) {
-		List<Kitap> kitap = (List<Kitap>) kitapRepo.findAll();
+		List<Kitap> kitap = kitapRepo.findAll();
 		model.addAttribute("kitap", kitap);
 		
-		return "/kitap/list-books";
+		return "/kitap/list-book";
 	}
 	
 	@GetMapping("/new")
 	public String displayBookForm(Model model) {
 		
 		Kitap aBook = new Kitap();
-		model.addAttribute("employee", aBook);
+		model.addAttribute("kitap", aBook);
 		
 		return "/kitap/new-book";
 	}
@@ -41,6 +41,6 @@ public class KitapController {
 		// save to database using employee crud repos.
 		kitapRepo.save(kitap);
 		
-		return "redirect:/kitap/new";
+		return "redirect:/kitap/list";
 	}
 }

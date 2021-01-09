@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 	
-	<head th:replace="layouts :: header"></head>
+	<head th:replace="layout :: header"></head>
 	
 	<body>
 	
-	<nav th:replace="layouts :: navbar"></nav>
-	
+	<nav th:replace="layout :: navbar"></nav>
+	<br><br><br>
 	<!--  Add New Book Button -->
 			<a th:href="@{/kitap/new}"
 				class="btn btn-primary btn-sm mb-3"> 
@@ -27,14 +27,14 @@
 					</tr>
 				</thead>		
 				<tbody>
-					<tr th:each="aBooks : ${books}">
-						<td th:text="${aBooks.kitapAdi}"/>
-						<td th:text="${aBooks.kitapAltAdi}"/>
-						<td th:text="${aBooks.kitapSeriAdi}"/>
-						<td th:text="${aBooks.yazarId}"/>
-						<td th:text="${aBooks.yayýneviId}"/>
-						<td th:text="${aBooks.isbnNo}"/>
-						<td th:text="${aBooks.aciklama}"/>
+					<tr th:each="aBook : ${books}">
+						<td th:text="${aBook.kitapAdi}"/>
+						<td th:text="${aBook.kitapAltAdi}"/>
+						<td th:text="${aBook.kitapSeriAdi}"/>
+						<td th:text="${aBook.yazarId}"/>
+						<td th:text="${aBook.yayýneviId}"/>
+						<td th:text="${aBook.isbnNo}"/>
+						<td th:text="${aBook.aciklama}"/>
 					</tr>
 				</tbody>
 			

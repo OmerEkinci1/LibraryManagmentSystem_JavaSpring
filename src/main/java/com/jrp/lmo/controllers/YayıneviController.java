@@ -21,7 +21,7 @@ public class YayıneviController {
 	
 	@GetMapping("/list")
 	public String displayYayınevi(Model model) {
-		List<Yayınevi> yayınevi = (List<Yayınevi>) yayıneviRepo.findAll();
+		List<Yayınevi> yayınevi = yayıneviRepo.findAll();
 		model.addAttribute("yayınevi", yayınevi);
 		
 		return "/yayınevi/list-yayınevi";
@@ -41,7 +41,7 @@ public class YayıneviController {
 		// save to database using employee crud repos.
 		yayıneviRepo.save(yayınevi);
 		
-		return "redirect:/yayınevi/new";
+		return "redirect:/yayınevi/list";
 	}
 
 }

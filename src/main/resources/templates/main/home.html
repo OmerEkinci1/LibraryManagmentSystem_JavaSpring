@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 	
-	<head th:replace="layouts :: header"></head>
+	<head th:replace="layout :: header"></head>
 	
 	<body>
 	
-	<nav th:replace="layouts :: navbar"></nav>
+	<nav th:replace="layout :: navbar"></nav>
 	
 	<div class="container">
 	<br>
 	<h3>Main Dashboard</h3>
 	<hr>
-		<h4> Current Books </h4>
-		<div class"row">
-			<div class="col-md-6">
-				<table class="table table-bordered table-striped">
-					<thead class="thead-dark">
-						<tr>
-							<th>Book Name:</th>
-							<th>Book SubTitle</th>
-							<th>Book Serial Name</th>
-							<th>Book Author Id</th>
-							<th>Book Publisher Home Id</th>
-							<th>Book ISBN NO</th>
-							<th>Book Description</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="aBooks : ${booksList}">
-							<td th:text="${aBooks.kitapAdi}"></td>
-							<td th:text="${aBooks.kitapAltAdi}"></td>
-							<td th:text="${aBooks.kitapSeriAdi}"></td>
-							<td th:text="${aBooks.yazarId}"></td>
-							<td th:text="${aBooks.yayineviId}"></td>
-							<td th:text="${aBooks.isbnNo}"></td>
-							<td th:text="${aBooks.aciklama}"></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+	<h4> Current Books </h4>
+	<div class"row">
+		<div class="col-md-6">
+			<table class="table table-bordered table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th>Book Name:</th>
+						<th>Book SubTitle</th>
+						<th>Book Serial Name</th>
+						<th>Book Author Id</th>
+						<th>Book Publisher Home Id</th>
+						<th>Book ISBN NO</th>
+						<th>Book Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="aBook : ${booksList}">
+						<td th:text="${aBook.kitapAdi}"></td>
+						<td th:text="${aBook.kitapAltAdi}"></td>
+						<td th:text="${aBook.kitapSeriAdi}"></td>
+						<td th:text="${aBook.yazarId}"></td>
+						<td th:text="${aBook.yayineviId}"></td>
+						<td th:text="${aBook.isbnNo}"></td>
+						<td th:text="${aBook.aciklama}"></td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
+	</div>
 	</div>
 	
 	<div class="container">
@@ -76,7 +76,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="aYayýnevi : ${yayýneviList}">
+						<tr th:each="aYayýnevi : ${yayineviList}">
 							<td th:text="${aYayýnevi.yayineviAdi}"></td>
 							<td th:text="${aYayýnevi.aciklama}"></td>
 						</tr>
