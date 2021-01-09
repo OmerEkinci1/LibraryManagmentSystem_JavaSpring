@@ -7,5 +7,84 @@
 	
 	<nav th:replace="layouts :: navbar"></nav>
 	
+	<div class="container">
+	<br>
+	<h3>Main Dashboard</h3>
+	<hr>
+		<h4> Current Books </h4>
+		<div class"row">
+			<div class="col-md-6">
+				<table class="table table-bordered table-striped">
+					<thead class="thead-dark">
+						<tr>
+							<th>Book Name:</th>
+							<th>Book SubTitle</th>
+							<th>Book Serial Name</th>
+							<th>Book Author Id</th>
+							<th>Book Publisher Home Id</th>
+							<th>Book ISBN NO</th>
+							<th>Book Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="aBooks : ${booksList}">
+							<td th:text="${aBooks.kitapAdi}"></td>
+							<td th:text="${aBooks.kitapAltAdi}"></td>
+							<td th:text="${aBooks.kitapSeriAdi}"></td>
+							<td th:text="${aBooks.yazarId}"></td>
+							<td th:text="${aBooks.yayineviId}"></td>
+							<td th:text="${aBooks.isbnNo}"></td>
+							<td th:text="${aBooks.aciklama}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<h4> Current Authors </h4>
+		<div class="row">
+			<div class="col-md-6">		
+				<table class="table table-bordered table-striped">
+					<thead class="thead-dark">
+						<tr>
+							<th>Author Name</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="aYazar : ${authorsList}">
+							<td th:text="${aYazar.yazarAdi}"></td>
+							<td th:text="${aYazar.aciklama}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<h4> Current Publisher Homes </h4>
+		<div class="row">
+			<div class="col-md-6">		
+				<table class="table table-bordered table-striped">
+					<thead class="thead-dark">
+						<tr>
+							<th>Publisher Home Name</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="aYayýnevi : ${yayýneviList}">
+							<td th:text="${aYayýnevi.yayineviAdi}"></td>
+							<td th:text="${aYayýnevi.aciklama}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	
 	</body>
 	</html>
