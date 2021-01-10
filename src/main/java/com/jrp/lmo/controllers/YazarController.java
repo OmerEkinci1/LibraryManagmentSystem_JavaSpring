@@ -41,7 +41,7 @@ public class YazarController {
 		return "/yazar/new-author";
 	}
 	
-	@DeleteMapping("author/{yazarId}")
+	@DeleteMapping("yazar/{yazarId}")
 	public Map<String, Boolean> deleteBook(@PathVariable(value="yazarId") long yazarId) throws Exception {
 		Yazar yazar = yazarRepo.findById(yazarId).orElseThrow(() -> new Exception("Author not found for this id ::"+ yazarId));
 		

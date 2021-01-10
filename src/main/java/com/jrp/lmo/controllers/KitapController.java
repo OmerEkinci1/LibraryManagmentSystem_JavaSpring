@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -51,6 +50,12 @@ public class KitapController {
 		return response;
 	}
 	
+//	@DeleteMapping("/kitap/{kitapId}")
+//	public String delete(@PathVariable int kitapId) {
+//		Kitap kitap = kitapRepo.delete(kitap);
+//		return "Book has been deleted with this id: "+ kitapId;
+//	}
+	
 	@PostMapping("/save")
 	public String createBook(Model model, Kitap kitap) {
 		// save to database using employee crud repos.
@@ -58,4 +63,5 @@ public class KitapController {
 		
 		return "redirect:/kitap/list";
 	}
+	
 }

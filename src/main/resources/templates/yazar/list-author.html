@@ -6,11 +6,16 @@
 	<body>
 	
 	<nav th:replace="layout :: navbar"></nav>
-	<br><br><br>
+	<br>
+	<div class="container">
 	<!--  Add New Author Button -->
-			<a th:href="@{/publisher/new}"
+			<a th:href="@{/yazar/new}"
 				class="btn btn-primary btn-sm mb-3"> 
 				Add Author 
+			</a> 
+			<a th:href="@{/yazar/{yazarId}}"
+				class="btn btn-primary btn-sm mb-3"> 
+				Delete Author 
 			</a> 
 			<br></br>
 	
@@ -22,12 +27,12 @@
 					</tr>
 				</thead>		
 				<tbody>
-					<tr th:each="aYazar : ${yazar}">
+					<tr th:each="aYazar : ${authorsList}">
 						<td th:text="${aYazar.yazarAdi}"/>
 						<td th:text="${aYazar.aciklama}"/>
 					</tr>
 				</tbody>	
 			</table>	
-	
+	</div>
 	</body>
 	</html>

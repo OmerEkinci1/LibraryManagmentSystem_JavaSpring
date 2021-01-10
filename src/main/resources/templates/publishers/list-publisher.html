@@ -6,11 +6,16 @@
 	<body>
 	
 	<nav th:replace="layout :: navbar"></nav>
-	<br><br><br>
+	<br>
+	<div class="container">
 	<!--  Add New Publishing House Button -->
 			<a th:href="@{/publisher/new}"
 				class="btn btn-primary btn-sm mb-3"> 
 				Add Publishing House 
+			</a>
+			<a th:href="@{/publisher/new}"
+				class="btn btn-primary btn-sm mb-3"> 
+				Delete Publishing House 
 			</a> 
 			<br></br>
 	
@@ -22,13 +27,13 @@
 					</tr>
 				</thead>		
 				<tbody>
-					<tr th:each="aYayýnevi : ${yayinevi}">
+					<tr th:each="aYayinevi : ${yayineviList}">
 						<td th:text="${aYayinevi.yayineviAdi}"/>
 						<td th:text="${aYayinevi.aciklama}"/>
 					</tr>
 				</tbody>
 			
 			</table>	
-	
+	</div>
 	</body>
 	</html>

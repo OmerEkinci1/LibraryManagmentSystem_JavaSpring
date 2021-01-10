@@ -41,7 +41,7 @@
 		</div>
 	</div>
 	</div>
-	
+	<br>
 	<div class="container">
 		<h4> Current Authors </h4>
 		<div class="row">
@@ -63,7 +63,7 @@
 			</div>
 		</div>
 	</div>
-	
+	<br>
 	<div class="container">
 		<h4> Current Publisher Homes </h4>
 		<div class="row">
@@ -76,9 +76,9 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="aYayınevi : ${yayineviList}">
-							<td th:text="${aYayınevi.yayineviAdi}"></td>
-							<td th:text="${aYayınevi.aciklama}"></td>
+						<tr th:each="aYayinevi : ${yayineviList}">
+							<td th:text="${aYayinevi.yayineviAdi}"></td>
+							<td th:text="${aYayinevi.aciklama}"></td>
 						</tr>
 					</tbody>
 				</table>
