@@ -44,8 +44,8 @@ public class HomeController {
 		List<Yazar> authors = yazarRepo.findAll();
 		model.addAttribute("authorsList",authors);
 		
-		List<Yayınevi> yayınevi = yayıneviRepo.findAll();
-		model.addAttribute("yayineviList",yayınevi);
+		List<Yayınevi> yayinevi = yayıneviRepo.findAll();
+		model.addAttribute("yayineviList",yayinevi);
 		
 		return "main/home";
 	}
@@ -54,7 +54,7 @@ public class HomeController {
 	public String showSignUpForm(Model model) {
 		model.addAttribute("user", new User());
 		
-		return "main/register";
+		return "users/register";
 	}
 	
 	@PostMapping("/process_register")
@@ -64,7 +64,7 @@ public class HomeController {
 		user.setPassword(encodedPassword);
 		
 		userRepo.save(user);
-		return "register_success";
+		return "users/register_success";
 	}
 	
 

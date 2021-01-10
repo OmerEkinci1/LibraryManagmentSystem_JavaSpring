@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 	
-	<head th:replace="layouts :: header"></head>
+	<head th:replace="layout :: header"></head>
 	
 	<body>
 	
-	<nav th:replace="layouts :: navbar"></nav>
-	<br><br><br>
+	<nav th:replace="layout :: navbar"></nav>
+	<br>
 	<div class="container">
 			<form action="/yazar/save" th:object="${yazar}" method="POST">
 			  <div class="mb-3">

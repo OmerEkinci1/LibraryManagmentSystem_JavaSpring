@@ -8,7 +8,7 @@
 	<nav th:replace="layout :: navbar"></nav>
 	<br><br><br>
 	<!--  Add New Publishing House Button -->
-			<a th:href="@{/yayýnevi/new}"
+			<a th:href="@{/publisher/new}"
 				class="btn btn-primary btn-sm mb-3"> 
 				Add Publishing House 
 			</a> 
@@ -22,9 +22,9 @@
 					</tr>
 				</thead>		
 				<tbody>
-					<tr th:each="aYayýnevi : ${yayýnevi}">
-						<td th:text="${aYayýnevi.yayineviAdi}"/>
-						<td th:text="${aYayýnevi.aciklama}"/>
+					<tr th:each="aYayýnevi : ${yayinevi}">
+						<td th:text="${aYayinevi.yayineviAdi}"/>
+						<td th:text="${aYayinevi.aciklama}"/>
 					</tr>
 				</tbody>
 			

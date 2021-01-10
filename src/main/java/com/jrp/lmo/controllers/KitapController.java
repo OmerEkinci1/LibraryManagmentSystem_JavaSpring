@@ -1,11 +1,16 @@
 package com.jrp.lmo.controllers;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -34,6 +39,16 @@ public class KitapController {
 		model.addAttribute("kitap", aBook);
 		
 		return "/kitap/new-book";
+	}
+	
+	@DeleteMapping("kitap/{kitapId}")
+	public Map<String, Boolean> deleteBook(@PathVariable(value="kitapId") long kitapId) throws Exception {
+		Kitap kitap = kitapRepo.findById(kitapId).orElseThrow(() -> new Exception("Book not found for this id ::"+ kitapId));
+		
+		kitapRepo.delete(kitap);
+		Map<String, Boolean> response = new HashMap<>();
+		response.put("deleted", Boolean.TRUE);
+		return response;
 	}
 	
 	@PostMapping("/save")
