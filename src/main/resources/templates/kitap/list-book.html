@@ -13,36 +13,39 @@
 				class="btn btn-primary btn-sm mb-3"> 
 				Add Book 
 			</a> 
-			<a th:href="@{/kitap/{kitapId}}"
-				class="btn btn-primary btn-sm mb-3"> 
-				Delete Book 
-			</a> 
+			<div>
+				<h1>All Books</h1>
+			</div>
 			<br><br>
 			<table class="table table-bordered table-striped">
 				<thead class="thead-dark">
 					<tr>
-						<th>Book Name: </th>
-						<th>Book Subtitle: </th>
-						<th>Book Serial Title: </th>
-						<th>Author Id: </th>
-						<th>Publishing House Id: </th>
-						<th>ISBN No: </th>
-						<th>Description: </th>
+						<th>Book Name:</th>
+						<th>Book SubTitle</th>
+						<th>Book Serial Name</th>
+						<th>Book Author Id</th>
+						<th>Book Publisher Home Id</th>
+						<th>Book ISBN NO</th>
+						<th>Book Description</th>
+						<th>Actions</th>
 					</tr>
-				</thead>		
+				</thead>
 				<tbody>
-					<tr th:each="aBook : ${booksList}">
-						<td th:text="${aBook.kitapAdi}"/>
-						<td th:text="${aBook.kitapAltAdi}"/>
-						<td th:text="${aBook.kitapSeriAdi}"/>
-						<td th:text="${aBook.yazarId}"/>
-						<td th:text="${aBook.yayýneviId}"/>
-						<td th:text="${aBook.isbnNo}"/>
-						<td th:text="${aBook.aciklama}"/>
+					<tr th:each="aBook : ${kitap}">
+						<td th:text="${aBook.kitapAdi}"></td>
+						<td th:text="${aBook.kitapAltAdi}"></td>
+						<td th:text="${aBook.kitapSeriAdi}"></td>
+						<td th:text="${aBook.yazarId}"></td>
+						<td th:text="${aBook.yayineviId}"></td>
+						<td th:text="${aBook.isbnNo}"></td>
+						<td th:text="${aBook.aciklama}"></td>
+						<td>
+							<a th:href="@{/updateBook/{id}(id=${aBook.kitapId})}" class="btn btn-primary">Update</a>
+							<a th:href="@{/deleteBook/{id}(id=${aBook.kitapId})}" class="btn btn-danger">Delete</a>
+						</td>
 					</tr>
 				</tbody>
-			
-			</table>	
+			</table>
 	</div>	
 	</body>
 	</html>

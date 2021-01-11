@@ -13,26 +13,29 @@
 				class="btn btn-primary btn-sm mb-3"> 
 				Add Author 
 			</a> 
-			<a th:href="@{/yazar/{yazarId}}"
-				class="btn btn-primary btn-sm mb-3"> 
-				Delete Author 
-			</a> 
 			<br></br>
-	
+			<div>
+				<h1>All Authors</h1>
+			</div>
 			<table class="table table-bordered table-striped">
-				<thead class="thead-dark">
-					<tr>
-						<th>Author Name: </th>
-						<th>Description: </th>
-					</tr>
-				</thead>		
-				<tbody>
-					<tr th:each="aYazar : ${authorsList}">
-						<td th:text="${aYazar.yazarAdi}"/>
-						<td th:text="${aYazar.aciklama}"/>
-					</tr>
-				</tbody>	
-			</table>	
+					<thead class="thead-dark">
+						<tr>
+							<th>Author Name</th>
+							<th>Description</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="aYazar : ${yazar}">
+							<td th:text="${aYazar.yazarAdi}"></td>
+							<td th:text="${aYazar.aciklama}"></td>
+							<td>
+								<a th:href="@{/updateAuthor/{id}(id=${aYazar.yazarId})}" class="btn btn-primary">Update</a>
+								<a th:href="@{/deleteAuthor/{id}(id=${aYazar.yazarId})}" class="btn btn-danger">Delete</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 	</div>
 	</body>
 	</html>

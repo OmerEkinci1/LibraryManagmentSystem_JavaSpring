@@ -9,6 +9,9 @@
 	<br>
 	<div class="container">
 			<form th:action="@{/yazar/save}" th:object="${yazar}" method="POST">
+			
+			<input type="hidden" th:field="${yazar.yazarId}"/>
+			
 			  <div class="mb-3">
 			   <!--   <label for="exampleInputEmail1" class="form-label">Book Name:</label> -->
 			    <input type="text" class="form-control" id="yazarAdi" placeholder="Author Name:" th:field="${yazar.yazarAdi}">
@@ -16,7 +19,7 @@
 			  <div class="mb-3">
 			    <input type="text" class="form-control" id="yazarAciklama" placeholder="Author Description: " th:field="${yazar.aciklama}">
 			  </div>
-			  <button type="submit" class="btn btn-primary">Ekle</button>
+			  <button type="submit" class="btn btn-primary">Update Author</button>
 			</form>
 	</div>
 	

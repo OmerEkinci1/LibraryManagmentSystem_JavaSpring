@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head th:replace="layout :: header"></head>
+	
+	<body>
+	
+	<nav th:replace="layout :: navbar"></nav>
+	<br><br><br>
+	<div class="container">
+		<form action="#" th:action="@{/kitap/save}" th:object="${kitap}" method="POST">
+		
+		<input type="hidden" th:field="${kitap.kitapId}"/>
+		
+		  <div class="mb-3">
+		   <!--   <label for="exampleInputEmail1" class="form-label">Book Name:</label> -->
+		    <input type="text" class="form-control" id="bookName" th:field="${kitap.kitapAdi}">
+		   </div>
+		  <div class="mb-3">
+		    <input type="text" class="form-control" id="bookSubtitle"  th:field="${kitap.kitapAltAdi}">
+		  </div>
+		  <div class="mb-3">
+		    <input type="text" class="form-control" id="bookSerialName"  th:field="${kitap.kitapSeriAdi}">
+		  </div>
+		  <div class="mb-3">
+		    <input type="text" class="form-control" id="bookAuthorId"  th:field="${kitap.yazarId}">
+		  </div>
+		  <div class="mb-3">
+		    <input type="text" class="form-control" id="bookYayýneviId"  th:field="${kitap.yayineviId}">
+		  </div>
+		  <div class="mb-3">
+		    <input type="text" class="form-control" id="bookISBNno"  th:field="${kitap.isbnNo}">
+		  </div>
+		  <div class="mb-3">
+		    <input type="text" class="form-control" id="bookDescription"  th:field="${kitap.aciklama}">
+		  </div>
+	 	 <button type="submit" class="btn btn-primary">Update Book</button>
+		</form>
+	</div>
+	
+	<hr>
+	
+	<a th:href = @{/kitap/list}>Back to Book List</a>
+	
+	</body>
+	</html>

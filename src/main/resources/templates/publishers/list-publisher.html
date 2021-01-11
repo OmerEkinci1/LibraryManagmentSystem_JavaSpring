@@ -13,27 +13,29 @@
 				class="btn btn-primary btn-sm mb-3"> 
 				Add Publishing House 
 			</a>
-			<a th:href="@{/publisher/new}"
-				class="btn btn-primary btn-sm mb-3"> 
-				Delete Publishing House 
-			</a> 
 			<br></br>
-	
+			<div>
+				<h1>All Publisher Homes</h1>
+			</div>
 			<table class="table table-bordered table-striped">
-				<thead class="thead-dark">
-					<tr>
-						<th>Publishing House Name: </th>
-						<th>Description: </th>
-					</tr>
-				</thead>		
-				<tbody>
-					<tr th:each="aYayinevi : ${yayineviList}">
-						<td th:text="${aYayinevi.yayineviAdi}"/>
-						<td th:text="${aYayinevi.aciklama}"/>
-					</tr>
-				</tbody>
-			
-			</table>	
+					<thead class="thead-dark">
+						<tr>
+							<th>Publisher Home Name</th>
+							<th>Description</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="aYayinevi : ${yayinevi}">
+							<td th:text="${aYayinevi.yayineviAdi}"></td>
+							<td th:text="${aYayinevi.aciklama}"></td>
+							<td>
+								<a th:href="@{/updatePublisher/{id}(id=${aYazar.yayineviId})}" class="btn btn-primary">Update</a>
+								<a th:href="@{/deletePublisher/{id}(id=${aYazar.yayineviId})}" class="btn btn-danger">Delete</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 	</div>
 	</body>
 	</html>
