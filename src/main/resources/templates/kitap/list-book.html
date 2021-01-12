@@ -40,7 +40,7 @@
 						<td th:text="${aBook.isbnNo}"></td>
 						<td th:text="${aBook.aciklama}"></td>
 						<td>
-							<a th:href="@{/updateBook/{id}(id=${aBook.kitapId})}" class="btn btn-primary">Update</a>
+							<a th:href="@{/updateBook/{id}(id=${aBook.kitapId})}" class="btn btn-primary">Update</a> 
 							<a th:href="@{/deleteBook/{id}(id=${aBook.kitapId})}" class="btn btn-danger">Delete</a>
 						</td>
 					</tr>

@@ -38,16 +38,6 @@ public class YayıneviController {
 		return "/publishers/new-publisher";
 	}
 	
-//	@DeleteMapping("publisher/{yayineviId}")
-//	public Map<String, Boolean> deleteBook(@PathVariable(value="yayineviId") long yayineviId) throws Exception {
-//		Yayınevi yayinevi = yayıneviRepo.findById(yayineviId).orElseThrow(() -> new Exception("Publisher Home not found for this id ::"+ yayineviId));
-//		
-//		yayıneviRepo.delete(yayinevi);
-//		Map<String, Boolean> response = new HashMap<>();
-//		response.put("deleted", Boolean.TRUE);
-//		return response;
-//	}
-	
 	@PostMapping("/save")
 	public String createBook(Model model, Yayınevi yayinevi) {
 		yayıneviRepo.save(yayinevi);

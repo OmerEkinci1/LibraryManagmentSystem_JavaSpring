@@ -8,7 +8,7 @@
 	<nav th:replace="layout :: navbar"></nav>
 	<br><br><br>
 	<div class="container">
-			<form th:action="@{/publisher/save}" th:object="${yayinevi}" method="POST">
+			<form action="#" th:action="@{/publisher/save}" th:object="${yayinevi}" method="POST">
 			  <div class="mb-3">
 			   <!--   <label for="exampleInputEmail1" class="form-label">Book Name:</label> -->
 			    <input type="text" class="form-control" id="yayineviAdi" placeholder="Publisher Home Name:" th:field="${yayinevi.yayineviAdi}">

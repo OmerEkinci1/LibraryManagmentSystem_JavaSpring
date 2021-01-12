@@ -8,7 +8,7 @@
 	<nav th:replace="layout :: navbar"></nav>
 	<br>
 	<div class="container">
-			<form th:action="@{/yazar/save}" th:object="${yazar}" method="POST">
+			<form action="#" th:action="@{/yazar/save}" th:object="${yazar}" method="POST">
 			
 			<input type="hidden" th:field="${yazar.yazarId}"/>
 			

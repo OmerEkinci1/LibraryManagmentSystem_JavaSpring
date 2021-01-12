@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.jrp.lmo.dao.KitapRepository;
 import com.jrp.lmo.entities.Kitap;
@@ -29,6 +30,7 @@ public class KitapController {
 		
 		return "/kitap/list-book";
 	}
+
 	
 	@GetMapping("/new")
 	public String displayBookForm(Model model) {
@@ -38,22 +40,6 @@ public class KitapController {
 		
 		return "/kitap/new-book";
 	}
-	
-//	@DeleteMapping("kitap/{kitapId}")
-//	public Map<String, Boolean> deleteBook(@PathVariable(value="kitapId") long kitapId) throws Exception {
-//		Kitap kitap = kitapRepo.findById(kitapId).orElseThrow(() -> new Exception("Book not found for this id ::"+ kitapId));
-//		
-//		kitapRepo.delete(kitap);
-//		Map<String, Boolean> response = new HashMap<>();
-//		response.put("deleted", Boolean.TRUE);
-//		return response;
-//	}
-	
-//	@DeleteMapping("/kitap/{kitapId}")
-//	public String delete(@PathVariable int kitapId) {
-//		Kitap kitap = kitapRepo.delete(kitap);
-//		return "Book has been deleted with this id: "+ kitapId;
-//	}
 	
 	@PostMapping("/save")
 	public String createBook(Model model,Kitap kitap) {
@@ -76,4 +62,5 @@ public class KitapController {
 		this.kitapRepo.deleteById(kitapId);
 		return "/kitap/list-book";
 	}
+	
 }
